@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            flaga: true,
             nazwa: 'pinassa',
             waga: 125
         } 
