@@ -3,12 +3,16 @@ const app = Vue.createApp({
         return {
             flaga: true,
             nazwa: 'pinassa',
-            waga: 125
+            wypornosc: 40
         } 
     },
     methods: {
-        changeTitle () {
-            this.nazwa="galeon wielki az strasny"
+        przestawFlage () {
+            this.flaga=!this.flaga
+            console.log(this.flaga)
+        },
+        handleEvent() {
+            console.log('działam')
         }
     }
 }) 
