@@ -29,9 +29,11 @@
             <ul>
                 <li v-for="ship in ships">
                     <span style="color:red">{{ship.nazwa}}</span> ma wyporność {{ship.wypornosc}} i prędziutkość {{ship.szybkosc}}
+                    <br><img :src="ship.img" :alt="ship.nazwa">
                 </li>
             </ul>
         </div>
+        <a :href="url">gogiel</a>
         <br>
         <button @click="przestawFlage">TOGGLE SHOW</button>
     </div>
