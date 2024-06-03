@@ -11,8 +11,11 @@ const app = Vue.createApp({
             this.flaga=!this.flaga
             console.log(this.flaga)
         },
-        handleEvent() {
-            console.log('działam')
+        handleEvent(e, data) {
+            console.log(e, e.type)
+            if (data) {
+                console.log (data)
+            }
         }
     }
 }) 
