@@ -13,6 +13,9 @@ const app = Vue.createApp({
         },
         handleEvent() {
             console.log('działam')
+        },
+        handleMouseMove() {
+            
         }
     }
 }) 
