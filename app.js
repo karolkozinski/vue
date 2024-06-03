@@ -5,8 +5,7 @@ const app = Vue.createApp({
             nazwa: 'pinassa',
             wypornosc: 40,
             x: 0,
-            y: 0,
-            data: '' 
+            y: 0
         } 
     },
     methods: {
@@ -14,8 +13,16 @@ const app = Vue.createApp({
             this.flaga=!this.flaga
             console.log(this.flaga)
         },
-        handleEvent() {
-            console.log('działam')
+        handleEvent(e, data) {
+            console.log(e, e.type)
+            if (data) {
+                console.log(data)
+            }
+
+        },
+        handleMouseMove (e) {
+            this.x = e.offsetX
+            this.y = e.offsetY
         }
     }
 }) 
