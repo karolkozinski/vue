@@ -4,9 +4,9 @@ const app = Vue.createApp({
             flaga: true,
             url: "https://www.google.com/",
             ships: [
-                {nazwa: "Pinassa", wypornosc: "40", szybkosc: 14, img: "img/Pinnace.webp"},
-                {nazwa: "Sloop", wypornosc: "60", szybkosc: 12, img: "img/Sloop.png"},
-                {nazwa: "Barka", wypornosc: "80", szybkosc: 10, img: "img/Barque.webp"}
+                {nazwa: "Pinassa", wypornosc: "40", szybkosc: 14, img: "img/Pinnace.webp", isFav: true},
+                {nazwa: "Sloop", wypornosc: "60", szybkosc: 12, img: "img/Sloop.png", isFav: false},
+                {nazwa: "Barka", wypornosc: "80", szybkosc: 10, img: "img/Barque.webp", isFav: true}
 
             ]
         } 
@@ -15,6 +15,9 @@ const app = Vue.createApp({
         przestawFlage () {
             this.flaga=!this.flaga
             console.log(this.flaga)
+        },
+        changeFav (ship) {
+            ship.isFav=!ship.isFav
         }
         
     }

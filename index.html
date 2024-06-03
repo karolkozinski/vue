@@ -6,19 +6,32 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <style>
-       @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
-       body {
-        font-family:'Teko';
-        font-size:1.5em;
+    @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+    body {
+        font-family: 'Teko';
+        font-size: 1.5em;
+        background: #eee;
+        max-width: 960px;
+        margin: 20px auto;
     }
-    .box {
-        padding: 100px 0;
-        width: 400px;
-        text-align: center;
-        background: #ddd;
-        margin: 20px;
-        display: inline-block;
+    .fav {
+        background: red;
     }
+    p, h3, ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style-type: none;
+        background: #fff;
+        margin: 20px auto;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
 </style>
 </head>
 <body>
@@ -27,8 +40,8 @@
     <div id="app">
         <div v-show="flaga">
             <ul>
-                <li v-for="ship in ships">
-                    <span style="color:red">{{ship.nazwa}}</span> ma wyporność {{ship.wypornosc}} i prędziutkość {{ship.szybkosc}}
+                <li v-for="ship in ships" :class="{fav: ship.isFav}" @click="changeFav(ship)">
+                    {{ship.nazwa}} ma wyporność {{ship.wypornosc}} i prędziutkość {{ship.szybkosc}}
                     <br><img :src="ship.img" :alt="ship.nazwa">
                 </li>
             </ul>
