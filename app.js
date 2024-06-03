@@ -19,7 +19,12 @@ const app = Vue.createApp({
         changeFav (ship) {
             ship.isFav=!ship.isFav
         }
-        
+    },
+
+    computed: {
+            filteredShips() {
+                return this.ships.filter((ship) => ship.isFav)
+            }
     }
 }) 
 

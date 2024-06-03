@@ -40,7 +40,7 @@
     <div id="app">
         <div v-show="flaga">
             <ul>
-                <li v-for="ship in ships" :class="{fav: ship.isFav}" @click="changeFav(ship)">
+                <li v-for="ship in filteredShips" :class="{fav: ship.isFav}" @click="changeFav(ship)">
                     {{ship.nazwa}} ma wyporność {{ship.wypornosc}} i prędziutkość {{ship.szybkosc}}
                     <br><img :src="ship.img" :alt="ship.nazwa">
                 </li>
